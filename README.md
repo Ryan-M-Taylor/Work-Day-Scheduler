@@ -10,3 +10,4 @@ Simple calendar application that allows users to save events for each hour of th
 
 ## Link to application
 
+This site was built using [GitHub Pages](https://ryan-m-taylor.github.io/Work-Day-Scheduler/)
