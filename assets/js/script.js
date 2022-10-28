@@ -18,30 +18,25 @@ function addEventListenersToButtons() {
   console.log("adding listeners");
   let saveButton = $(".saveBtn");
 
-  //console.log(textArea[4])
   saveButton.on("click", function (event) {
     const text = $(event.target).closest(".row").find(".text-area").val();
     const hour = $(event.target).closest(".row").find(".time-block").text();
-    console.log("call");
-
-    // build data
-    let newEntry = {
-      text: text,
-      hour: hour,
-    };
-
-    // 1 get the old data
-    var storeData = localStorage.setItem("stored", JSON.stringify(newEntry));
-    var getStoredData = JSON.parse(localStorage.getItem("stored"));
-    console.log(storeData)
-    // 2. update the old data
-    storedData.push(newEntry);
-    // 3 stringify and set the data
-    console.log(getStoredData)
-    localStorage.setItem("stored", JSON.stringify(newEntry));
+    localStorage.setItem(hour, text);
   });
 }
 
+
+// $(document).ready(function() {
+// $('.9 .text-area').val(localStorage.getItem('9:00'));
+// $('.').val(localStorage.getItem('10:00'));
+// $('.').val(localStorage.getItem('11:00'));
+// $('.').val(localStorage.getItem('12:00'));
+// $('.').val(localStorage.getItem('13:00'));
+// $('.').val(localStorage.getItem('14:00'));
+// $('.').val(localStorage.getItem('15:00'));
+// $('.').val(localStorage.getItem('16:00'));
+// $('.').val(localStorage.getItem('17:00'));
+// });
 
 function addClass(hour) {
   if (hour < moment().hour()) {
@@ -63,4 +58,13 @@ $(document).ready(function () {
   update();
   setInterval(update, 1000);
   populatePage();
+  $(".text-area .9").val(localStorage.getItem('9:00'));
+//   $('.').val(localStorage.getItem('10:00'));
+//   $('.').val(localStorage.getItem('11:00'));
+//   $('.').val(localStorage.getItem('12:00'));
+//   $('.').val(localStorage.getItem('13:00'));
+//   $('.').val(localStorage.getItem('14:00'));
+//   $('.').val(localStorage.getItem('15:00'));
+//   $('.').val(localStorage.getItem('16:00'));
+//   $('.').val(localStorage.getItem('17:00'));
 });
