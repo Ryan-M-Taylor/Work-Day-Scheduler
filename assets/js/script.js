@@ -30,22 +30,18 @@ function addEventListenersToButtons() {
       hour: hour,
     };
 
-    localStorage.setItem("stored", JSON.stringify(newEntry));
-    var storedData = JSON.parse(localStorage.getItem("stored"));
+    // 1 get the old data
+    var storeData = localStorage.setItem("stored", JSON.stringify(newEntry));
+    var getStoredData = JSON.parse(localStorage.getItem("stored"));
+    console.log(storeData)
     // 2. update the old data
     storedData.push(newEntry);
-    // 3 strinigy and set the data
+    // 3 stringify and set the data
+    console.log(getStoredData)
     localStorage.setItem("stored", JSON.stringify(newEntry));
   });
 }
-// 1 get the old data
-// var storedData = JSON.parse(localStorage.getItem("highscores"))
-// 2. update the old data
-// storedData.push(newEntry);
-// 3 strinigy and set the data
-// localStorage.setItem("highscores", JSON.stringify(newEntry))
-// console.log(variable)
-//have to iterate through them and add an event listener
+
 
 function addClass(hour) {
   if (hour < moment().hour()) {
