@@ -30,13 +30,12 @@ function addEventListenersToButtons() {
       hour: hour,
     };
 
-   localStorage.setItem("stored", JSON.stringify(newEntry));
-   var storedData = JSON.parse(localStorage.getItem("highscores"))
-   // 2. update the old data
-   storedData.push(newEntry);
-   // 3 strinigy and set the data
-   localStorage.setItem("highscores", JSON.stringify(newEntry))
-
+    localStorage.setItem("stored", JSON.stringify(newEntry));
+    var storedData = JSON.parse(localStorage.getItem("stored"));
+    // 2. update the old data
+    storedData.push(newEntry);
+    // 3 strinigy and set the data
+    localStorage.setItem("stored", JSON.stringify(newEntry));
   });
 }
 // 1 get the old data
